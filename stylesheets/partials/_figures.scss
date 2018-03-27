@@ -10,6 +10,8 @@
     -webkit-animation: rotation 2s infinite linear;
 }
 
+$cubic: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
 #professorGrimHeader {
     font-size: 55px;
     font-family: 'Courier New', Courier, monospace;
@@ -82,3 +84,8 @@
         -webkit-transform: rotate(359deg);
     }
   }
+
+ 
+
+
+
