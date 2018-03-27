@@ -35,40 +35,40 @@
   width: 180px;
   height: 180px;
   background-color: #EBEBEB;
-  border-style: outset;
   border-color: crimson;
   border-width: 15px;
   border-radius: 50%;
   margin-left: 100px;
-  background-image: url("images/oddish.png");
   background-size: cover;
-  -webkit-animation: rotation 2s infinite linear; }
+  -webkit-animation: rotation 2s infinite linear;
+  border-style: outset;
+  background-image: url("images/oddish.png"); }
 
 #gloomCircle {
   width: 180px;
   height: 180px;
   background-color: #EBEBEB;
-  border-style: outset;
-  border-color: orange;
-  border-radius: 50%;
+  border-color: crimson;
   border-width: 15px;
+  border-radius: 50%;
   margin-left: 100px;
-  background-image: url("images/gloom.png");
   background-size: cover;
-  -webkit-animation: rotation 2s infinite linear; }
+  -webkit-animation: rotation 2s infinite linear;
+  border-color: orange;
+  background-image: url("images/gloom.png"); }
 
 #weezingCircle {
   width: 180px;
   height: 180px;
   background-color: #EBEBEB;
-  border-style: outset;
-  border-color: yellow;
-  border-radius: 50%;
+  border-color: crimson;
   border-width: 15px;
+  border-radius: 50%;
   margin-left: 100px;
-  background-image: url("images/weezing.png");
   background-size: cover;
-  -webkit-animation: rotation 2s infinite linear; }
+  -webkit-animation: rotation 2s infinite linear;
+  border-color: yellow;
+  background-image: url("images/weezing.png"); }
 
 @-webkit-keyframes rotation {
   from {
