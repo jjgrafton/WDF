@@ -1,0 +1,97 @@
+#professorGrimHeader {
+    font-size: 55px;
+    font-family: 'Courier New', Courier, monospace;
+    font-style: bold;
+    color: $color;
+    padding-top: 10px;
+    padding-bottom: 40px;
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation: typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+
+}
+
+@keyframes typing {
+    from {
+        width: 0
+    }
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+
+@keyframes blink-caret {
+    from,
+    to {
+        border-color: transparent
+    }
+    50% {
+        border-color: orange;
+    }
+}
+
+#oddishCircle {
+    width: 180px;
+    height: 180px;
+    background-color: #EBEBEB;
+    border-style: outset;
+    border-color: crimson;
+    border-width: 15px;
+    border-radius: 50%;
+    margin-left: 100px;
+    background-image: url("images/oddish.png");
+    background-size: cover;
+    -webkit-animation: rotation 2s infinite linear;
+   
+  }
+  
+  #gloomCircle {
+    width: 180px;
+    height: 180px;
+    background-color: #EBEBEB;
+  
+    border-style: outset;
+    border-color: orange;
+    border-radius: 50%;
+    border-width: 15px;
+    margin-left: 100px;
+    background-image: url("images/gloom.png");
+    background-size: cover;
+    -webkit-animation: rotation 2s infinite linear;
+   
+  }
+  
+  #weezingCircle {
+    width: 180px;
+    height: 180px;
+    background-color: #EBEBEB;
+    border-style: outset;
+    border-color: yellow;
+    border-radius: 50%;
+    border-width: 15px;
+    margin-left: 100px;
+    background-image: url("images/weezing.png");
+    background-size: cover;
+    -webkit-animation: rotation 2s infinite linear;
+   
+  }
+  
+  @-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(359deg);
+    }
+  }
