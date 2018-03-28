@@ -107,14 +107,28 @@ pokeContainer = (pokemon) => {
 let professor = new Trainer ("Professor Grim");
 
 document.getElementById("oddishBtn").addEventListener("click", getPokemon("43"));
+function oddishEvent() {
+    let pokeCard = document.getElementsByClassName("card-content");
+    //add content listed in pokeContainer to pokeCard
+}
 
 
 
 document.getElementById("gloomBtn").addEventListener("click", getPokemon("44"));
+function gloomEvent() {
+    let pokeCard = document.getElementsByClassName("card-content");
+    //add content listed in pokeContainer to pokeCard
+
+}
 
 
 
 document.getElementById("weezingBtn").addEventListener("click", getPokemon("110"));
+function weezingEvent() {
+    let pokeCard = document.getElementsByClassName("card-content");
+    //add content listed in pokeContainer to pokeCard
+
+}
 
 pokeContainer()
 

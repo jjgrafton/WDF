@@ -1,16 +1,27 @@
 #oddishBtn #gloomBtn #weezingBtn {
   background-color: #FEC100; }
 
-.btn {
-  color: #FEC100;
-  border-radius: 80%; }
+#oddishBtn {
+  margin: 30px;
+  margin-right: 0px;
+  margin-top: 0px; }
+
+#gloomBtn {
+  margin: 30px;
+  margin-top: 0px; }
+
+#weezingBtn {
+  margin: 30px;
+  margin-left: 0px;
+  margin-top: 0px; }
 
 body {
   background-color: #528078; }
 
 .card {
-  background-color: #528078;
-  text-align: center; }
+  width: 500px;
+  height: 400px;
+  padding-top: 20px; }
 
 #professorGrimHeader {
   font-size: 55px;
