@@ -31,6 +31,7 @@ function getPokemon(idNumber) {
             //create a new pokemon
             let pokemon = new Pokemon(pokeData)
 
+            //call function to add to professor's array
             professor.addPokemon(pokemon);
 
           
@@ -61,7 +62,7 @@ class Trainer {
         this.name = name;
         this.pokemon = [];
     }
-
+    //function to add Pokemon to trainer array
     function addPokemon(pokemon) {
         this.pokemon.push(Pokemon);
     }
@@ -75,12 +76,6 @@ class Trainer {
     } 
 
 }
-
-
-
-let oddish = {}
-let gloom = {}
-let weezing = {}
 
 
 pokeContainer = (pokemon) => {
@@ -109,15 +104,20 @@ pokeContainer = (pokemon) => {
 
 }
 
+let professor = new Trainer ("Professor Grim");
+
+document.getElementById("oddishBtn").addEventListener("click", getPokemon("43"));
+
+
+
+document.getElementById("gloomBtn").addEventListener("click", getPokemon("44"));
+
+
+
+document.getElementById("weezingBtn").addEventListener("click", getPokemon("110"));
 
 pokeContainer()
 
 
-
-getPokemon("43")
-getPokemon("44")
-getPokemon("110")
-
-let professor = new Trainer ("Professor Grim");
 
 
