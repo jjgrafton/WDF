@@ -1,3 +1,8 @@
 body {
-    background-color: #528078;
+    background-color: $maincolor;
+}
+
+.card {
+    background-color: $maincolor;
+    text-align: center;
 }

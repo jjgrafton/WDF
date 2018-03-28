@@ -1,6 +1,7 @@
 @mixin pokemonCircle {
     width: 180px;
     height: 180px;
+    margin-top: 20px;
     background-color: #EBEBEB;
     border-color: crimson;
     border-width: 15px;
@@ -55,7 +56,11 @@ $cubic: cubic-bezier(0.785, 0.135, 0.15, 0.86);
     }
 }
 
-#oddishCircle {
+#circle {
+    @include pokemonCircle()
+}
+
+/* #oddishCircle {
     @include pokemonCircle;
      border-style: outset;
     background-image: url("images/oddish.png");
@@ -74,7 +79,7 @@ $cubic: cubic-bezier(0.785, 0.135, 0.15, 0.86);
     border-color: yellow;
     background-image: url("images/weezing.png");
    
-  }
+  } */
   
   @-webkit-keyframes rotation {
     from {
