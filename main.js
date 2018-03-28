@@ -31,9 +31,9 @@ function getPokemon(idNumber) {
             //create a new pokemon
             let pokemon = new Pokemon(pokeData)
 
-            //return the new pokemon
-            pokeArray.push(pokemon)
-            console.log(pokemon)
+            professor.addPokemon(pokemon);
+
+          
         },
         error: function (error) {
             console.log(error)
@@ -57,9 +57,13 @@ Method named get with one parameter called name,
 returns a Pokemon object housing information for the Pokemon it found*/
 
 class Trainer {
-    constructor(name, pokemon) {
+    constructor(name) {
         this.name = name;
         this.pokemon = [];
+    }
+
+    function addPokemon(pokemon) {
+        this.pokemon.push(Pokemon);
     }
 
     all() {
@@ -67,11 +71,8 @@ class Trainer {
     }
 
     get(pokemon) {
-        let collection = this.pokemon.filter(function (character) {
-            return character.name === pokemon
-        })
-        return collection.length === 1 ? collection[0] : collection
-    } //need to find out exactly how this works
+       
+    } 
 
 }
 
@@ -80,8 +81,6 @@ class Trainer {
 let oddish = {}
 let gloom = {}
 let weezing = {}
-let pokeArray = []
-let professor = undefined
 
 
 pokeContainer = (pokemon) => {
@@ -119,5 +118,6 @@ getPokemon("43")
 getPokemon("44")
 getPokemon("110")
 
+let professor = new Trainer ("Professor Grim");
 
 
