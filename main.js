@@ -118,6 +118,6 @@ document.getElementById("weezingBtn").addEventListener("click", getPokemon("110"
 
 pokeContainer()
 
-
+document.getElementsByClassName("card-reveal").addEventListener("click", )
 
 

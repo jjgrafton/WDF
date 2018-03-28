@@ -31,6 +31,16 @@
 		"oT": 1,
 		"q": 100
 		},
+	"\/images\/pokeball.jpg": {
+		"ft": 16384,
+		"iS": 77456,
+		"oA": 0,
+		"oAP": "\/images\/pokeball.jpg",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"q": 100
+		},
 	"\/images\/weezing.png": {
 		"ft": 32768,
 		"iS": 59489,
@@ -773,7 +783,7 @@
 "projectAttributes": {
 	"creationDate": 543861774,
 	"displayValue": "pokemon",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "meme-leo"
 	},
 "projectSettings": {
