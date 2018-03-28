@@ -1,77 +1,41 @@
-//Pokemon constructor 
 class Pokemon {
-    constructor(number, hp, attack, defense, abilities) {
-        this.number = number
-        this.hp = hp
-        this.attack = attack
-        this.defense = defense
-        this.abilities = abilities
+    constructor(pokehash) {
+        this.name = pokehash.name
+        this.number = pokehash.number
+        this.hp = pokehash.hp
+        this.attack = pokehash.attack
+        this.defense = pokehash.defense
+        this.abilities = pokehash.abilities
     }
 }
 
+let getPokeData = function(idNumber){
+    return $.ajax({
+      method: 'GET',
+      dataType: 'json',
+      url: 'https://pokeapi.co/api/v2/pokemon' + idNumber,
+      success: function(data){
+        // console.log(data)
+        pokeData.name = data.name;
+        pokeData.id = data.id;
+        pokeData.defenseTitle = data.stats[3].stat.name;
+        pokeData.defense = data.stats[3].base_stat;
+        pokeData.attackTitle = data.stats[4].stat.name;
+        pokeData.attack = data.stats[4].base_stat;
+        pokeData.hpTitle = data.stats[5].stat.name;
+        pokeData.hp = data.stats[5].base_stat;
+        pokeData.abilities = data.abilities;
+        pokeData.types = data.types;
+  
+  },
+  
+  error: function() {
+            alert('Error');
+         }
+  })
+  }
 
-$.ajax({
-    url: 'http://pokeapi.salestock.net/api/v2/pokemon/43/',
-    method: 'GET',
-    dataType: 'json',
-    success: function (oddishData) {
-        console.log(oddishData)
-        oddish.name = data.name
-        oddish.number = data.id
-        oddish.hp = data.stats[5].base_stat
-        oddish.defense = data.stats[3].base_stat
-        oddish.attack = data.stats[4].base_stat
-        oddish.abilities = data.abilities.name
-        var abilities = [];
-        for (var i = 0; i < oddishData.abilities.length; i++) {
-            abilities.push(oddishData.abilities[i].ability.name)
-        }
-    }
-})
-
-$.ajax({
-    url: 'http://pokeapi.salestock.net/api/v2/pokemon/44/',
-    method: 'GET',
-    dataType: 'json',
-    success: function (gloomData) {
-        console.log(gloomData)
-        gloom.name = data.name
-        gloom.number = data.id
-        gloom.hp = data.stats[5].base_stat
-        gloom.defense = data.stats[3].base_stat
-        gloom.attack = data.stats[4].base_stat
-        gloom.abilities = data.abilities.name
-        var abilities = [];
-        for (var i = 0; i < gloomData.abilities.length; i++) {
-            abilities.push(gloomData.abilities[i].ability.name)
-        }
-    }
-})
-
-$.ajax({
-    url: 'http://pokeapi.salestock.net/api/v2/pokemon/110/',
-    method: 'GET',
-    dataType: 'json',
-    success: function (weezingData) {
-        console.log(weezingData)
-        weezing.name = data.name
-        weezing.number = data.id
-        weezing.hp = data.stats[5].base_stat
-        weezing.defense = data.stats[3].base_stat
-        weezing.attack = data.stats[4].base_stat
-        weezing.abilities = data.abilities.name
-        var abilities = [];
-        $.each(abilities, function (key, value) {
-            console.log(value.ability.name);
-            s
-
-        })
-
-    }
-})
-
-
-let oddish = {
+  let oddish = {
     name: "",
     number: 0,
     hp: 0,
@@ -98,10 +62,9 @@ let weezing = {
     abilities: [],
 }
 
-/*Class of Trainer - stores Pokemon objects. 
-Method named all returns an array of Pokemon objects.
-Method named get with one parameter called name, 
-returns a Pokemon object housing information for the Pokemon it found*/
+let oddishPoke = new Pokemon(oddish)
+let gloomPoke = new Pokemon(oddish)
+let weezingPoke = new Pokemon(oddish)
 
 class Trainer {
     constructor(name) {
@@ -110,115 +73,53 @@ class Trainer {
     }
     //function to add Pokemon to trainer array
     addPokemon(pokemon) {
-        this.pokemon.push(Pokemon);
+        this.pokemon.push(pokemon);
     }
 
-    all() {
-        return this.pokemon
-    }
-
-    get(pokemon) {
-       
-    } 
-
 }
 
 
-pokeContainer = (pokemon) => {
-    let name = pokemon.name
+  $("#oddishBtn").click(function(){
+    var num43 = "/43/"
+    var idNumber = num43
+  
+      getPokeData(idNumber).then(function(pokeData) {
+      $("#oddishTitle").text(pokeData.name.toUpperCase());
+      $("#oddishRevealCard").text(pokeData.name.toUpperCase());
+      $("#oddishDefenseStat").text("Defense: " + pokeData.defense)
+      $("#oddishAttackStat").text("Attack: " + pokeData.attack)
+      $("#oddishHpStat").text("HP: " + pokeData.hp)
+      $("#oddishAbilitiesStat").text("Abilities: " +pokeData.abilities[0].ability.name + ", " + pokemonData.abilities[1].ability.name + ", " + pokemonData.abilities[2].ability.name)
+      $("#oddishTypesStat").text("Types: " + pokeData.types[0].type.name + ", " + pokemonData.types[1].type.name)
+  })
+  })
 
-    //div for all individual pokemon data
-    let pokeDiv = $("<div/>").addClass("pokemon-character", name)
-    let name = $("<h2/>").text("Name: " + (pokemon.name))
-    let pokemonNumber = $("<h3/>").text(pokemon.number)
-    let attack = $("<p/>").text("Attack: " + (pokemon.attack))
-    let defense = $("<p/>").text("Defense: " + (pokemon.defense))
-    let hp = $("<p/>").text("HP: " + (pokemon.hp))
+  $("gloomBtn").click(function(){
+    var num43 = "/44/"
+    var idNumber = num44
+  
+      getPokeData(idNumber).then(function(pokeData) {
+      $("#gloomTitle").text(pokeData.name.toUpperCase());
+      $("#gloomRevealCard").text(pokeData.name.toUpperCase());
+      $("#gloomDefenseStat").text("Defense: " + pokeData.defense)
+      $("#gloomAttackStat").text("Attack: " + pokeData.attack)
+      $("#gloomHpStat").text("HP: " + pokeData.hp)
+      $("#gloomAbilitiesStat").text("Abilities: " +pokeData.abilities[0].ability.name + ", " + pokemonData.abilities[1].ability.name + ", " + pokemonData.abilities[2].ability.name)
+      $("#gloomTypesStat").text("Types: " + pokeData.types[0].type.name + ", " + pokemonData.types[1].type.name)
+  })
+  })
 
-
-    //make an abilities list
-    let abilitiesList = $("<ul/>").addClass("ability-list")
-    /*pokemon.abilities.forEach((ability) => {
-        if (ability.isHidden) {
-            $("<li/>").text(ability.name).addClass("hidden-ability").appendTo(abilitiesList)
-        }
-        $("<li/>").text(ability.name).appendTo(abilitiesList)
-    })*/
-
-
-
-
-}
-
-let professor = new Trainer ("Professor Grim");
-
-document.getElementById("oddishBtn").addEventListener("click", getPokemon("43"));
-function oddishEvent() {
-    let pokeCard = document.getElementsByClassName("card-content");
-    //add content listed in pokeContainer to pokeCard
-}
-
-
-
-document.getElementById("gloomBtn").addEventListener("click", getPokemon("44"));
-function gloomEvent() {
-    let pokeCard = document.getElementsByClassName("card-content");
-    //add content listed in pokeContainer to pokeCard
-
-}
-
-
-
-document.getElementById("weezingBtn").addEventListener("click", getPokemon("110"));
-function weezingEvent() {
-    let pokeCard = document.getElementsByClassName("card-content");
-    //add content listed in pokeContainer to pokeCard
-
-}
-
-// pokeContainer()
-
-document.getElementsByClassName("card-reveal").addEventListener("click", )
-
-$(document).ready(function(){
-    $('.modal').modal();
-  });
-
-  instance.open();
-  instance.close();
-
-
-  //ajax call - parameter is pokemon ID
-/* function getPokemon(idNumber) {
-    return $.ajax({
-        url: "https://pokeapi.co/api/v2/pokemon/" + idNumber,
-        success: function (data) {
-            //populate the pokeData with the ajax data
-            pokeData.name = data.name
-            pokeData.number = data. //look up this stat
-            pokeData.hp = data.stats[5].base_stat
-            pokeData.defense = data.stats[3].base_stat
-            pokeData.attack = data.stats[4].base_stat
-            pokeData.abilities = data.abilities.name
-            //go through abilities and display
-            /*Need to add: 
-            - move related information
-            - priority
-            - power
-            - accuracy*/
-
-            //create a new pokemon
-           /*  let pokemon = new Pokemon(pokeData)
-
-            //call function to add to professor's array
-            professor.addPokemon(pokemon);
-
-          
-        },
-        error: function (error) {
-            console.log(error)
-        }
-    })
-}
- */ 
-//da
+  $("#weezingBtn").click(function(){
+    var num110 = "/110/"
+    var idNumber = num110
+  
+      getPokeData(idNumber).then(function(pokeData) {
+      $("#weezingTitle").text(pokeData.name.toUpperCase());
+      $("#weezingRevealCard").text(pokeData.name.toUpperCase());
+      $("#weezingDefenseStat").text("Defense: " + pokeData.defense)
+      $("#weezingAttackStat").text("Attack: " + pokeData.attack)
+      $("#weezingHpStat").text("HP: " + pokeData.hp)
+      $("#weezingAbilitiesStat").text("Abilities: " +pokeData.abilities[0].ability.name + ", " + pokemonData.abilities[1].ability.name + ", " + pokemonData.abilities[2].ability.name)
+      $("#weezingTypesInfo").text("Types: " + pokeData.types[0].type.name + ", " + pokemonData.types[1].type.name)
+  })
+  })

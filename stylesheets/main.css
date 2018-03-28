@@ -4,24 +4,28 @@
 #oddishBtn {
   margin: 30px;
   margin-right: 0px;
-  margin-top: 0px; }
+  margin-top: 0px;
+  margin-bottom: 0px; }
 
 #gloomBtn {
   margin: 30px;
-  margin-top: 0px; }
+  margin-top: 0px;
+  margin-bottom: 0px; }
 
 #weezingBtn {
   margin: 30px;
   margin-left: 0px;
-  margin-top: 0px; }
+  margin-top: 0px;
+  margin-bottom: 0px; }
 
 body {
   background-color: #528078; }
 
 .card {
-  width: 500px;
-  height: 400px;
-  padding-top: 20px; }
+  width: 350px;
+  height: 300;
+  text-align: center;
+  margin-top: 0; }
 
 #professorGrimHeader {
   font-size: 55px;
@@ -57,37 +61,59 @@ body {
     border-color: orange; } }
 
 #circle {
-  width: 50%;
-  height: 50%;
+  width: 180px;
+  height: 180px;
   margin-top: 20px;
   background-color: #EBEBEB;
-  border-color: crimson;
+  border-style: outset;
   border-width: 15px;
   border-radius: 50%;
   margin-left: 100px;
   background-size: cover;
   -webkit-animation: rotation 2s infinite linear; }
 
-/* #oddishCircle {
-    @include pokemonCircle;
-     border-style: outset;
-    background-image: url("images/oddish.png");
-    
-    }
-  
-  #gloomCircle {
-    @include pokemonCircle()
-    border-color: orange;
-    background-image: url("images/gloom.png");
-   
-  }
-  
-  #weezingCircle {
-    @include pokemonCircle()
-    border-color: yellow;
-    background-image: url("images/weezing.png");
-   
-  } */
+#oddishCircle {
+  width: 180px;
+  height: 180px;
+  margin-top: 20px;
+  background-color: #EBEBEB;
+  border-style: outset;
+  border-width: 15px;
+  border-radius: 50%;
+  margin-left: 100px;
+  background-size: cover;
+  -webkit-animation: rotation 2s infinite linear;
+  border-color: crimson;
+  background-image: url("images/oddish.png"); }
+
+#gloomCircle {
+  width: 180px;
+  height: 180px;
+  margin-top: 20px;
+  background-color: #EBEBEB;
+  border-style: outset;
+  border-width: 15px;
+  border-radius: 50%;
+  margin-left: 100px;
+  background-size: cover;
+  -webkit-animation: rotation 2s infinite linear;
+  border-color: orange;
+  background-image: url("images/gloom.png"); }
+
+#weezingCircle {
+  width: 180px;
+  height: 180px;
+  margin-top: 20px;
+  background-color: #EBEBEB;
+  border-style: outset;
+  border-width: 15px;
+  border-radius: 50%;
+  margin-left: 100px;
+  background-size: cover;
+  -webkit-animation: rotation 2s infinite linear;
+  border-color: yellow;
+  background-image: url("images/weezing.png"); }
+
 @-webkit-keyframes rotation {
   from {
     -webkit-transform: rotate(0deg); }

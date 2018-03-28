@@ -41,6 +41,17 @@
 		"opt": 0,
 		"q": 100
 		},
+	"\/images\/pokeball.png": {
+		"ft": 32768,
+		"iS": 103939,
+		"oA": 0,
+		"oAP": "\/images\/pokeball.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/images\/weezing.png": {
 		"ft": 32768,
 		"iS": 59489,
@@ -65,6 +76,16 @@
 		"mi": 1,
 		"oA": 0,
 		"oAP": "\/main-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/main2.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/main2-min.js",
 		"oF": 0,
 		"sC": 3,
 		"tS": 0
