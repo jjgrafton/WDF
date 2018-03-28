@@ -1,4 +1,4 @@
-//Pokemon constructor to take data from ajax call
+//Pokemon constructor 
 class Pokemon {
     constructor(number, hp, attack, defense, abilities) {
         this.number = number
@@ -16,7 +16,7 @@ function getPokemon(idNumber) {
         success: function (data) {
             //populate the pokeData with the ajax data
             pokeData.name = data.name
-            pokeData.number = data.id //look up this stat
+            pokeData.number = data. //look up this stat
             pokeData.hp = data.stats[5].base_stat
             pokeData.defense = data.stats[3].base_stat
             pokeData.attack = data.stats[4].base_stat
@@ -119,8 +119,5 @@ getPokemon("43")
 getPokemon("44")
 getPokemon("110")
 
-(function (result) {
-    //once you have all of your pokemon, you can initialize a new trainer with your pokemon array
-    despot = new Trainer("Despot", pokeArray)
-})
+
 
