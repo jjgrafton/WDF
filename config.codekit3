@@ -9,6 +9,39 @@
 	],
 "creatorBuild": "26330",
 "files": {
+	"\/images\/gloom.png": {
+		"ft": 32768,
+		"iS": 60223,
+		"oA": 0,
+		"oAP": "\/images\/gloom.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/oddish.png": {
+		"ft": 32768,
+		"iS": 58790,
+		"oA": 0,
+		"oAP": "\/images\/oddish.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/images\/weezing.png": {
+		"ft": 32768,
+		"iS": 59489,
+		"oA": 0,
+		"oAP": "\/images\/weezing.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/index.html": {
 		"cB": 0,
 		"ft": 8192,
