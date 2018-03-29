@@ -26,13 +26,13 @@ let getPokeData = function(idNumber){
         pokeData.hp = data.stats[5].base_stat;
         pokeData.abilities = data.abilities;
         pokeData.types = data.types;
-  
+        return pokeData
   },
   
-  error: function() {
-            alert('Error');
-         }
-  })
+    error: function() {
+                alert('Error');
+            }
+    })
   }
 
   let oddish = {
@@ -62,9 +62,9 @@ let weezing = {
     abilities: [],
 }
 
-let oddishPoke = new Pokemon(oddish)
-let gloomPoke = new Pokemon(oddish)
-let weezingPoke = new Pokemon(oddish)
+let oddishPoke = new Pokemon(getPokeData("/43/"))
+let gloomPoke = new Pokemon(getPokeData("/44/"))
+let weezingPoke = new Pokemon(getPokeData("/110/"))
 
 class Trainer {
     constructor(name) {
@@ -80,47 +80,41 @@ class Trainer {
 
 
   $("#oddishCircle").click(function(){
-    var num43 = "/43/"
-    var idNumber = num43
+   
   
-      getPokeData(idNumber).then(function(pokeData) {
-      $("#oddishTitle").text(pokeData.name.toUpperCase());
-      $("#oddishRevealCard").text(pokeData.name.toUpperCase());
-      $("#oddishDefenseStat").text("Defense: " + pokeData.defense)
-      $("#oddishAttackStat").text("Attack: " + pokeData.attack)
-      $("#oddishHpStat").text("HP: " + pokeData.hp)
-      $("#oddishAbilitiesStat").text("Abilities: " +pokeData.abilities[0].ability.name + ", " + pokemonData.abilities[1].ability.name + ", " + pokemonData.abilities[2].ability.name)
-      $("#oddishTypesStat").text("Types: " + pokeData.types[0].type.name + ", " + pokemonData.types[1].type.name)
-  })
+      function(oddishPoke) {
+      $("#oddishTitle").text(oddishPoke.name.toUpperCase());
+      $("#oddishRevealCard").text(oddishPoke.name.toUpperCase());
+      $("#oddishDefenseStat").text("Defense: " + oddishPoke.defense)
+      $("#oddishAttackStat").text("Attack: " + oddishPoke.attack)
+      $("#oddishHpStat").text("HP: " + oddishPoke.hp)
+      $("#oddishAbilitiesStat").text("Abilities: " +oddishPoke.abilities[0].ability.name + ", " + oddishPoke.abilities[1].ability.name + ", " + oddishPoke.abilities[2].ability.name)
+      $("#oddishTypesStat").text("Types: " + oddishPoke.types[0].type.name + ", " + oddishPoke.types[1].type.name)
   })
 
   $("gloomCircle").click(function(){
-    var num43 = "/44/"
-    var idNumber = num44
   
-      getPokeData(idNumber).then(function(pokeData) {
-      $("#gloomTitle").text(pokeData.name.toUpperCase());
-      $("#gloomRevealCard").text(pokeData.name.toUpperCase());
-      $("#gloomDefenseStat").text("Defense: " + pokeData.defense)
-      $("#gloomAttackStat").text("Attack: " + pokeData.attack)
-      $("#gloomHpStat").text("HP: " + pokeData.hp)
-      $("#gloomAbilitiesStat").text("Abilities: " +pokeData.abilities[0].ability.name + ", " + pokemonData.abilities[1].ability.name + ", " + pokemonData.abilities[2].ability.name)
-      $("#gloomTypesStat").text("Types: " + pokeData.types[0].type.name + ", " + pokemonData.types[1].type.name)
+      (function(gloomPoke) {
+      $("#gloomTitle").text(gloomPoke.name.toUpperCase());
+      $("#gloomRevealCard").text(gloomPoke.name.toUpperCase());
+      $("#gloomDefenseStat").text("Defense: " + gloomPoke.defense)
+      $("#gloomAttackStat").text("Attack: " + gloomPoke.attack)
+      $("#gloomHpStat").text("HP: " + gloomPoke.hp)
+      $("#gloomAbilitiesStat").text("Abilities: " +gloomPoke.abilities[0].ability.name + ", " + gloomPoke.abilities[1].ability.name + ", " + gloomPoke.abilities[2].ability.name)
+      $("#gloomTypesStat").text("Types: " + gloomPoke.types[0].type.name + ", " + gloomPoke.types[1].type.name)
   })
   })
 
   $("#weezingCircle").click(function(){
-    var num110 = "/110/"
-    var idNumber = num110
   
-      getPokeData(idNumber).then(function(pokeData) {
-      $("#weezingTitle").text(pokeData.name.toUpperCase());
-      $("#weezingRevealCard").text(pokeData.name.toUpperCase());
-      $("#weezingDefenseStat").text("Defense: " + pokeData.defense)
-      $("#weezingAttackStat").text("Attack: " + pokeData.attack)
-      $("#weezingHpStat").text("HP: " + pokeData.hp)
-      $("#weezingAbilitiesStat").text("Abilities: " +pokeData.abilities[0].ability.name + ", " + pokemonData.abilities[1].ability.name + ", " + pokemonData.abilities[2].ability.name)
-      $("#weezingTypesInfo").text("Types: " + pokeData.types[0].type.name + ", " + pokemonData.types[1].type.name)
+      (function(pokeData) {
+      $("#weezingTitle").text(weezingPoke.name.toUpperCase());
+      $("#weezingRevealCard").text(weezingPoke.name.toUpperCase());
+      $("#weezingDefenseStat").text("Defense: " + weezingPoke.defense)
+      $("#weezingAttackStat").text("Attack: " + weezingPoke.attack)
+      $("#weezingHpStat").text("HP: " + weezingPoke.hp)
+      $("#weezingAbilitiesStat").text("Abilities: " +weezingPoke.abilities[0].ability.name + ", " + weezingPoke.abilities[1].ability.name + ", " + weezingPoke.abilities[2].ability.name)
+      $("#weezingTypesInfo").text("Types: " + weezingPoke.types[0].type.name + ", " + weezingPoke.types[1].type.name)
   })
   })
 
