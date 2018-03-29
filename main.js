@@ -13,9 +13,10 @@ let getPokeData = function(idNumber){
     return $.ajax({
       method: 'GET',
       dataType: 'json',
-      url: 'https://pokeapi.co/api/v2/pokemon' + idNumber,
+      url: 'http://pokeapi.salestock.net/api/v2/pokemon' + idNumber,
       success: function(data){
         // console.log(data)
+        let pokeData = {}
         pokeData.name = data.name;
         pokeData.id = data.id;
         pokeData.defenseTitle = data.stats[3].stat.name;
@@ -26,6 +27,7 @@ let getPokeData = function(idNumber){
         pokeData.hp = data.stats[5].base_stat;
         pokeData.abilities = data.abilities;
         pokeData.types = data.types;
+        console.log(pokeData)
         return pokeData
   },
   
