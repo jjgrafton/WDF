@@ -18,25 +18,17 @@
             </div>
         </div>
 
-        <div class="row">
-        <div class="col s12 m6 l3"></div>
-            <div class="buttons" class="center-align">
-                <a id="oddishBtn" class="waves-effect waves-light waves-red btn-large pulse #ffc400 amber accent-3">Oddish</a>
-                <a id="gloomBtn" class="waves-effect waves-light waves-red btn-large pulse #ffc400 amber accent-3">Gloom</a>
-                <a id="weezingBtn" class="waves-effect waves-light waves-red btn-large pulse #ffc400 amber accent-3">Weezing</a>
-            </div>
-        </div>
-        </div>
     
         <div class="row">
-            <div class="col s12 m6 l3">
-                <div class="card">
+            <div class="col s12 m6 l4">
+                <div class="card" class="oddishCard">
+                        <div class="card-panel teal darken-3">
                     <div class="card-image waves-effect waves-block waves-light">
-                      <img id="circle" class="activator" src="images/oddish.png">
+                      <img id="circle" id="oddishCircle" class="activator" src="images/oddish.png">
                     </div>
                     <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">Oddish<i class="material-icons right">more_vert</i></span>
-                      <p><a href="#">This is a link</a></p>
+                      <span class="card-title activator amber-text"><i class="material-icons right"></i></span>
+                      <a id="oddishBtn" class="waves-effect waves-light waves-red btn-large pulse #ffc400 amber accent-3"><h5>Oddish</h5></a>
                     </div>
                     <div class="card-reveal">
                       <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
@@ -48,19 +40,23 @@
                       <p id="oddishAbilitiesStat"></p>
                       <p id="oddishTypesStat"></p>
                     </div>
+                    </div>
                   </div>
-             </div>
-             <div class="col s12 m6 l3">
-                <div class="card">
+                </div>
+               
+             
+             <div class="col s12 m6 l4">
+                <div class="card" class="gloomCard">
+                        <div class="card-panel teal darken-3">
                     <div class="card-image waves-effect waves-block waves-light">
-                      <img id="circle" class="activator" class="pulse" src="images/gloom.png">
+                      <img id="circle" class="activator" src="images/gloom.png">
                     </div>
                     <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                      <p><a href="#">This is a link</a></p>
+                      <span class="card-title activator amber-text"><i class="material-icons right"></i></span>
+                      <a id="gloomBtn" class="waves-effect waves-light waves-red btn-large pulse #ffc400 amber accent-3"><h5>Gloom</h5></a>
                     </div>
                     <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                      <span class="card-title grey-text text-darken-4">Gloom<i class="material-icons right">close</i></span>
                       <p id="gloomTitle"></p>
                       <p id="gloomRevealCard"></p>
                       <p id="gloomDefenseStat"></p>
@@ -69,19 +65,23 @@
                       <p id="gloomAbilitiesStat"></p>
                       <p id="gloomTypesStat"></p>                    
                     </div>
+                    </div>
                   </div>
-             </div>
-             <div class="col s12 m6 l3">
-                <div class="card">
+                </div>
+            
+             
+             <div class="col s12 m6 l4">
+                <div class="card" class="weezingCard">
+                        <div class="card-panel teal darken-3">
                     <div class="card-image waves-effect waves-block waves-light">
                       <img id="circle" class="activator" src="images/weezing.png">
                     </div>
                     <div class="card-content">
-                      <span class="card-title activator grey-text text-darken-4">Card Title<i class="material-icons right">more_vert</i></span>
-                      <p><a href="#">This is a link</a></p>
+                      <span class="card-title activator amber-text"><i class="material-icons right"></i></span>
+                      <a id="weezingBtn" class="waves-effect waves-light waves-red btn-large pulse #ffc400 amber accent-3"><h5>Weezing</h5></a>
                     </div>
                     <div class="card-reveal">
-                      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+                      <span class="card-title grey-text text-darken-4">Weezing<i class="material-icons right">close</i></span>
                       <p id="weezingTitle"></p>
                       <p id="weezingRevealCard"></p>
                       <p id="weezingDefenseStat"></p>
@@ -89,18 +89,14 @@
                       <p id="weezingHpStat"></p>
                       <p id="weezingAbilitiesStat"></p>
                       <p id="weezingTypesStat"></p>                    
+     </div>
+     </div>
                     </div>
-                  </div>
-             </div>
-        </div>
+</div>
 
 
     </div>
-
-
-
-
-
+</div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
     <script src="main.js"></script>

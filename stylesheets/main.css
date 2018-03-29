@@ -2,30 +2,35 @@
   background-color: #FEC100; }
 
 #oddishBtn {
-  margin: 30px;
+  margin: 0px;
   margin-right: 0px;
   margin-top: 0px;
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  margin-left: 35px; }
 
 #gloomBtn {
-  margin: 30px;
+  margin: 0px;
   margin-top: 0px;
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  margin-left: 38px; }
 
 #weezingBtn {
-  margin: 30px;
+  margin: 00px;
   margin-left: 0px;
   margin-top: 0px;
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  margin-left: 29px; }
 
 body {
   background-color: #528078; }
 
 .card {
-  width: 350px;
-  height: 300;
-  text-align: center;
-  margin-top: 0; }
+  width: 300px;
+  margin-top: 0;
+  font-family: 'Courier New', Courier, monospace; }
+
+.oddishCard {
+  padding-right: 20px; }
 
 #professorGrimHeader {
   font-size: 55px;
@@ -66,9 +71,10 @@ body {
   margin-top: 20px;
   background-color: #EBEBEB;
   border-style: outset;
+  border-color: orange;
   border-width: 15px;
   border-radius: 50%;
-  margin-left: 100px;
+  margin-left: 40px;
   background-size: cover;
   -webkit-animation: rotation 2s infinite linear; }
 
@@ -78,12 +84,12 @@ body {
   margin-top: 20px;
   background-color: #EBEBEB;
   border-style: outset;
+  border-color: orange;
   border-width: 15px;
   border-radius: 50%;
-  margin-left: 100px;
+  margin-left: 40px;
   background-size: cover;
   -webkit-animation: rotation 2s infinite linear;
-  border-color: crimson;
   background-image: url("images/oddish.png"); }
 
 #gloomCircle {
@@ -92,12 +98,12 @@ body {
   margin-top: 20px;
   background-color: #EBEBEB;
   border-style: outset;
+  border-color: orange;
   border-width: 15px;
   border-radius: 50%;
-  margin-left: 100px;
+  margin-left: 40px;
   background-size: cover;
   -webkit-animation: rotation 2s infinite linear;
-  border-color: orange;
   background-image: url("images/gloom.png"); }
 
 #weezingCircle {
@@ -106,12 +112,12 @@ body {
   margin-top: 20px;
   background-color: #EBEBEB;
   border-style: outset;
+  border-color: orange;
   border-width: 15px;
   border-radius: 50%;
-  margin-left: 100px;
+  margin-left: 40px;
   background-size: cover;
   -webkit-animation: rotation 2s infinite linear;
-  border-color: yellow;
   background-image: url("images/weezing.png"); }
 
 @-webkit-keyframes rotation {

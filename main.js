@@ -79,7 +79,7 @@ class Trainer {
 }
 
 
-  $("#oddishBtn").click(function(){
+  $("#oddishCircle").click(function(){
     var num43 = "/43/"
     var idNumber = num43
   
@@ -94,7 +94,7 @@ class Trainer {
   })
   })
 
-  $("gloomBtn").click(function(){
+  $("gloomCircle").click(function(){
     var num43 = "/44/"
     var idNumber = num44
   
@@ -109,7 +109,7 @@ class Trainer {
   })
   })
 
-  $("#weezingBtn").click(function(){
+  $("#weezingCircle").click(function(){
     var num110 = "/110/"
     var idNumber = num110
   
