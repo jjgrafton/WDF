@@ -27,10 +27,17 @@ body {
 .card {
   width: 300px;
   margin-top: 0;
-  font-family: 'Courier New', Courier, monospace; }
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #00695c; }
 
 .oddishCard {
   padding-right: 20px; }
+
+.card-content {
+  background-color: #00695c; }
+
+.card-reveal {
+  background-color: #00695c; }
 
 #professorGrimHeader {
   font-size: 55px;
@@ -68,26 +75,28 @@ body {
 #circle {
   width: 180px;
   height: 180px;
-  margin-top: 20px;
+  margin-top: 30px;
   background-color: #EBEBEB;
   border-style: outset;
   border-color: orange;
   border-width: 15px;
   border-radius: 50%;
-  margin-left: 40px;
+  margin-left: 60px;
+  margin-bottom: 30px;
   background-size: cover;
   -webkit-animation: rotation 2s infinite linear; }
 
 #oddishCircle {
   width: 180px;
   height: 180px;
-  margin-top: 20px;
+  margin-top: 30px;
   background-color: #EBEBEB;
   border-style: outset;
   border-color: orange;
   border-width: 15px;
   border-radius: 50%;
-  margin-left: 40px;
+  margin-left: 60px;
+  margin-bottom: 30px;
   background-size: cover;
   -webkit-animation: rotation 2s infinite linear;
   background-image: url("images/oddish.png"); }
@@ -95,13 +104,14 @@ body {
 #gloomCircle {
   width: 180px;
   height: 180px;
-  margin-top: 20px;
+  margin-top: 30px;
   background-color: #EBEBEB;
   border-style: outset;
   border-color: orange;
   border-width: 15px;
   border-radius: 50%;
-  margin-left: 40px;
+  margin-left: 60px;
+  margin-bottom: 30px;
   background-size: cover;
   -webkit-animation: rotation 2s infinite linear;
   background-image: url("images/gloom.png"); }
@@ -109,13 +119,14 @@ body {
 #weezingCircle {
   width: 180px;
   height: 180px;
-  margin-top: 20px;
+  margin-top: 30px;
   background-color: #EBEBEB;
   border-style: outset;
   border-color: orange;
   border-width: 15px;
   border-radius: 50%;
-  margin-left: 40px;
+  margin-left: 60px;
+  margin-bottom: 30px;
   background-size: cover;
   -webkit-animation: rotation 2s infinite linear;
   background-image: url("images/weezing.png"); }
@@ -125,3 +136,12 @@ body {
     -webkit-transform: rotate(0deg); }
   to {
     -webkit-transform: rotate(359deg); } }
+
+#oddishBtn {
+  margin-left: 55px; }
+
+#gloomBtn {
+  margin-left: 60px; }
+
+#weezingBtn {
+  margin-left: 50px; }
