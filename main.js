@@ -82,7 +82,7 @@ class Trainer {
   $("#oddishCircle").click(function(){
    
   
-      function(oddishPoke) {
+      function init(oddishPoke) {
       $("#oddishTitle").text(oddishPoke.name.toUpperCase());
       $("#oddishRevealCard").text(oddishPoke.name.toUpperCase());
       $("#oddishDefenseStat").text("Defense: " + oddishPoke.defense)
@@ -90,11 +90,12 @@ class Trainer {
       $("#oddishHpStat").text("HP: " + oddishPoke.hp)
       $("#oddishAbilitiesStat").text("Abilities: " +oddishPoke.abilities[0].ability.name + ", " + oddishPoke.abilities[1].ability.name + ", " + oddishPoke.abilities[2].ability.name)
       $("#oddishTypesStat").text("Types: " + oddishPoke.types[0].type.name + ", " + oddishPoke.types[1].type.name)
-  })
+  } init()
+})
 
   $("gloomCircle").click(function(){
   
-      (function(gloomPoke) {
+      function init(gloomPoke) {
       $("#gloomTitle").text(gloomPoke.name.toUpperCase());
       $("#gloomRevealCard").text(gloomPoke.name.toUpperCase());
       $("#gloomDefenseStat").text("Defense: " + gloomPoke.defense)
@@ -102,12 +103,12 @@ class Trainer {
       $("#gloomHpStat").text("HP: " + gloomPoke.hp)
       $("#gloomAbilitiesStat").text("Abilities: " +gloomPoke.abilities[0].ability.name + ", " + gloomPoke.abilities[1].ability.name + ", " + gloomPoke.abilities[2].ability.name)
       $("#gloomTypesStat").text("Types: " + gloomPoke.types[0].type.name + ", " + gloomPoke.types[1].type.name)
-  })
-  })
+  } init()
+})
 
   $("#weezingCircle").click(function(){
   
-      (function(pokeData) {
+      function init(weezingPoke) {
       $("#weezingTitle").text(weezingPoke.name.toUpperCase());
       $("#weezingRevealCard").text(weezingPoke.name.toUpperCase());
       $("#weezingDefenseStat").text("Defense: " + weezingPoke.defense)
@@ -115,7 +116,8 @@ class Trainer {
       $("#weezingHpStat").text("HP: " + weezingPoke.hp)
       $("#weezingAbilitiesStat").text("Abilities: " +weezingPoke.abilities[0].ability.name + ", " + weezingPoke.abilities[1].ability.name + ", " + weezingPoke.abilities[2].ability.name)
       $("#weezingTypesInfo").text("Types: " + weezingPoke.types[0].type.name + ", " + weezingPoke.types[1].type.name)
-  })
+  } init()
   })
 
-  getPokeData();
+
+
