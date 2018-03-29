@@ -123,3 +123,5 @@ class Trainer {
       $("#weezingTypesInfo").text("Types: " + pokeData.types[0].type.name + ", " + pokemonData.types[1].type.name)
   })
   })
+
+  getPokeData();
