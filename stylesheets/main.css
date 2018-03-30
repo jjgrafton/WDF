@@ -47,16 +47,16 @@ body {
   padding-top: 10px;
   padding-bottom: 40px;
   overflow: hidden;
-  /* content is not revealed until the animation */
-  border-right: .12em solid orange;
-  /* The typwriter cursor */
+  /* Content is not revealed until the animation */
+  border-right: .15em solid orange;
+  /* Cursor */
   white-space: nowrap;
-  /* Keeps the content on a single line */
+  /* Keeps  content on single line */
   margin: 0 auto;
-  /* Gives that scrolling effect as the typing happens */
+  /* Scrolling effect during typing */
   letter-spacing: .15em;
-  /* Adjust as needed */
-  animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite; }
+  /* Both these bits can be played around with */
+  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; }
 
 @keyframes typing {
   from {
@@ -64,7 +64,7 @@ body {
   to {
     width: 100%; } }
 
-/* Typewriter cursor effect */
+/* Typewriter blinking cursor  */
 @keyframes blink-caret {
   from,
   to {

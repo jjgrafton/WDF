@@ -1,14 +1,29 @@
 class Pokemon {
     constructor(pokehash) {
-        this.name = pokehash.name
-        this.number = pokehash.number
-        this.hp = pokehash.hp
-        this.attack = pokehash.attack
-        this.defense = pokehash.defense
-        this.abilities = pokehash.abilities
-    }
-}
+        this.obj = {name: pokehash.name, number: pokehash.number, hp: pokehash.hp, attack: pokehash.attack, defense: pokehash.defense, abilities: pokehash.abilities}
 
+    }
+        get() {
+            professor.addPokemon(this.obj)
+            return this.obj
+        }
+}
+class Trainer {
+    constructor() {
+        this.pokemon = [];
+    }
+
+    addPokemon(pokemon) {
+        this.pokemon.push(pokemon);
+    }
+
+    displayPokemon() {
+        for (let i = 0; i < this.pokemon.length; i++)
+        {console.log(this.pokemon[i])}
+    }
+
+}
+let professor = new Trainer()
 let getPokeData = function(idNumber){
     return $.ajax({
       method: 'GET',
@@ -27,8 +42,6 @@ let getPokeData = function(idNumber){
         pokeData.hp = data.stats[5].base_stat;
         pokeData.abilities = data.abilities;
         pokeData.types = data.types;
-        console.log(pokeData)
-        return pokeData
   },
   
     error: function() {
@@ -37,53 +50,18 @@ let getPokeData = function(idNumber){
     })
   }
 
-  let oddish = {
-    name: "",
-    number: 0,
-    hp: 0,
-    defense: 0,
-    attack: 0,
-    abilities: [],
-}
-
-let gloom = {
-    name: "",
-    number: 0,
-    hp: 0,
-    defense: 0,
-    attack: 0,
-    abilities: [],
-}
-
-let weezing = {
-    name: "",
-    number: 0,
-    hp: 0,
-    defense: 0,
-    attack: 0,
-    abilities: [],
-}
 
 let oddishPoke = new Pokemon(getPokeData("/43/"))
 let gloomPoke = new Pokemon(getPokeData("/44/"))
 let weezingPoke = new Pokemon(getPokeData("/110/"))
 
-class Trainer {
-    constructor(name) {
-        this.name = name;
-        this.pokemon = [];
-    }
-    //function to add Pokemon to trainer array
-    addPokemon(pokemon) {
-        this.pokemon.push(pokemon);
-    }
-
-}
+professor.addPokemon(oddishPoke)
+professor.addPokemon(gloomPoke)
+professor.addPokemon(weezingPoke)
+professor.displayPokemon()
 
 
   $("#oddishCircle").click(function(){
-   
-  
       function init(oddishPoke) {
       $("#oddishTitle").text(oddishPoke.name.toUpperCase());
       $("#oddishRevealCard").text(oddishPoke.name.toUpperCase());
