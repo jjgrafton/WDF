@@ -1,43 +1,43 @@
-//Pokemon constructor to take data from ajax call
 class Pokemon {
-    constructor(number, hp, attack, defense, abilities) {
-        this.number = number
-        this.hp = hp
-        this.attack = attack
-        this.defense = defense
-        this.abilities = abilities
+    constructor(pokehash) {
+        this.name = pokehash.name
+        this.number = pokehash.number
+        this.hp = pokehash.hp
+        this.attack = pokehash.attack
+        this.defense = pokehash.defense
+        this.abilities = pokehash.abilities
     }
 }
 
-/*Need to add: 
-- move related information
-- priority
-- power
-- accuracy*/
+let getPokeData = function(idNumber){
+    return $.ajax({
+      method: 'GET',
+      dataType: 'json',
+      url: 'http://pokeapi.salestock.net/api/v2/pokemon' + idNumber,
+      success: function(data){
+        // console.log(data)
+        let pokeData = {}
+        pokeData.name = data.name;
+        pokeData.id = data.id;
+        pokeData.defenseTitle = data.stats[3].stat.name;
+        pokeData.defense = data.stats[3].base_stat;
+        pokeData.attackTitle = data.stats[4].stat.name;
+        pokeData.attack = data.stats[4].base_stat;
+        pokeData.hpTitle = data.stats[5].stat.name;
+        pokeData.hp = data.stats[5].base_stat;
+        pokeData.abilities = data.abilities;
+        pokeData.types = data.types;
+        console.log(pokeData)
+        return pokeData
+  },
+  
+    error: function() {
+                alert('Error');
+            }
+    })
+  }
 
-/*Class of trainer to store Pokemon objects, have a method named all to return an array of Pokemon objects, have a method named get with one parameter called name, returns a Pokemon object housing information for the Pokemon it found*/
-
-class Trainer {
-    constructor(name, pokemon) {
-        this.name = name;
-        this.pokemon = [];
-    }
-
-    all() {
-        return this.pokemon
-    }
-
-    get(pokemon) {
-        let collection = this.pokemon.filter(function (character) {
-            return character.name === pokemon
-        })
-        return collection.length === 1 ? collection[0] : collection
-    } //need to find out exactly how this works
-
-}
-
-//data received from ajax call stored here
-let pokeData = {
+  let oddish = {
     name: "",
     number: 0,
     hp: 0,
@@ -46,80 +46,80 @@ let pokeData = {
     abilities: [],
 }
 
-//ajax call - parameter is pokemon ID
-function getPokemon(idNumber) {
-    //must return the result of the ajax call
-    return $.ajax({
-        url: "https://pokeapi.co/api/v2/pokemon/" + idNumber,
-        success: function (data) {
-            //populate the pokeData with the ajax data
-            pokeData.name = data.name
-            pokeData.number = data.id //look up this stat
-            pokeData.hp = data.stats[5].base_stat
-            pokeData.defense = data.stats[3].base_stat
-            pokeData.attack = data.stats[4].base_stat
-            pokeData.abilities = data.
-            //go through abilities and display
-
-            //create a new pokemon
-            let pokemon = new Pokemon(pokeData)
-            //clear the array of stats so that it's specific to the pokemon (REFACTOR?)
-            //return the pokemon
-            pokeArray.push(pokemon)
-            console.log(pokemon)
-        },
-        error: function (error) {
-            console.log(error)
-        }
-    })
+let gloom = {
+    name: "",
+    number: 0,
+    hp: 0,
+    defense: 0,
+    attack: 0,
+    abilities: [],
 }
 
-let oddish = {}
-let gloom = {}
-let weezing = {}
-let pokeArray = []
-let professor = undefined
+let weezing = {
+    name: "",
+    number: 0,
+    hp: 0,
+    defense: 0,
+    attack: 0,
+    abilities: [],
+}
 
+let oddishPoke = new Pokemon(getPokeData("/43/"))
+let gloomPoke = new Pokemon(getPokeData("/44/"))
+let weezingPoke = new Pokemon(getPokeData("/110/"))
 
-pokeContainer = (pokemon) => {
-    let name = pokemon.name
-
-    //div for all individual pokemon data
-    let pokeDivr = $("<div/>").addClass("pokemon-character", name)
-
-    //values pulled from Pokemon object and displayed in new HTML elements
-    let name = $("<h2/>").text("Name: " + (pokemon.name))
-    let pokemonNumber = $("<h3/>").text(pokemon.number)
-    let attack = $("<p/>").text("Attack: " + (pokemon.attack))
-    let defense = $("<p/>").text("Defense: " + (pokemon.defense))
-    let hp = $("<p/>").text("HP: " + (pokemon.hp))
-
-
-    //create abilities list
-    let abilitiesList = $("<ul/>").addClass("ability-list")
-    /*pokemon.abilities.forEach((ability) => {
-        if (ability.isHidden) {
-            $("<li/>").text(ability.name).addClass("hidden-ability").appendTo(abilitiesList)
-        }
-        $("<li/>").text(ability.name).appendTo(abilitiesList)
-    })*/
-
-
-
+class Trainer {
+    constructor(name) {
+        this.name = name;
+        this.pokemon = [];
+    }
+    //function to add Pokemon to trainer array
+    addPokemon(pokemon) {
+        this.pokemon.push(pokemon);
+    }
 
 }
 
 
-// pokeContainer()
-
-
-
-//each function call will create a new pokemon. must use the .done() callback in order to only push the pokemon into the slave array once the ajax call has completed and the pokemon has been initialized (then the next pokemon, and the next)
-getPokemon("43").done(getPokemon("44")).done(getPokemon("110")).done(function (result) {
-    //once you have all of your pokemon, you can initialize a new trainer with your pokemon array
-    despot = new Trainer("Despot", pokeArray)
+  $("#oddishCircle").click(function(){
+   
+  
+      function init(oddishPoke) {
+      $("#oddishTitle").text(oddishPoke.name.toUpperCase());
+      $("#oddishRevealCard").text(oddishPoke.name.toUpperCase());
+      $("#oddishDefenseStat").text("Defense: " + oddishPoke.defense)
+      $("#oddishAttackStat").text("Attack: " + oddishPoke.attack)
+      $("#oddishHpStat").text("HP: " + oddishPoke.hp)
+      $("#oddishAbilitiesStat").text("Abilities: " +oddishPoke.abilities[0].ability.name + ", " + oddishPoke.abilities[1].ability.name + ", " + oddishPoke.abilities[2].ability.name)
+      $("#oddishTypesStat").text("Types: " + oddishPoke.types[0].type.name + ", " + oddishPoke.types[1].type.name)
+  } init()
 })
-// .done(function(result){
-//     let char = despot.get("charmander")
-//     pokeContainer(char)
-//     })
+
+  $("gloomCircle").click(function(){
+  
+      function init(gloomPoke) {
+      $("#gloomTitle").text(gloomPoke.name.toUpperCase());
+      $("#gloomRevealCard").text(gloomPoke.name.toUpperCase());
+      $("#gloomDefenseStat").text("Defense: " + gloomPoke.defense)
+      $("#gloomAttackStat").text("Attack: " + gloomPoke.attack)
+      $("#gloomHpStat").text("HP: " + gloomPoke.hp)
+      $("#gloomAbilitiesStat").text("Abilities: " +gloomPoke.abilities[0].ability.name + ", " + gloomPoke.abilities[1].ability.name + ", " + gloomPoke.abilities[2].ability.name)
+      $("#gloomTypesStat").text("Types: " + gloomPoke.types[0].type.name + ", " + gloomPoke.types[1].type.name)
+  } init()
+})
+
+  $("#weezingCircle").click(function(){
+  
+      function init(weezingPoke) {
+      $("#weezingTitle").text(weezingPoke.name.toUpperCase());
+      $("#weezingRevealCard").text(weezingPoke.name.toUpperCase());
+      $("#weezingDefenseStat").text("Defense: " + weezingPoke.defense)
+      $("#weezingAttackStat").text("Attack: " + weezingPoke.attack)
+      $("#weezingHpStat").text("HP: " + weezingPoke.hp)
+      $("#weezingAbilitiesStat").text("Abilities: " +weezingPoke.abilities[0].ability.name + ", " + weezingPoke.abilities[1].ability.name + ", " + weezingPoke.abilities[2].ability.name)
+      $("#weezingTypesInfo").text("Types: " + weezingPoke.types[0].type.name + ", " + weezingPoke.types[1].type.name)
+  } init()
+  })
+
+
+

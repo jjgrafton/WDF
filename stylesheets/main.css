@@ -1,3 +1,44 @@
+#oddishBtn #gloomBtn #weezingBtn {
+  background-color: #FEC100; }
+
+#oddishBtn {
+  margin: 0px;
+  margin-right: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 35px; }
+
+#gloomBtn {
+  margin: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 38px; }
+
+#weezingBtn {
+  margin: 00px;
+  margin-left: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 29px; }
+
+body {
+  background-color: #528078; }
+
+.card {
+  width: 300px;
+  margin-top: 0;
+  font-family: 'Courier New', Courier, monospace;
+  background-color: #00695c; }
+
+.oddishCard {
+  padding-right: 20px; }
+
+.card-content {
+  background-color: #00695c; }
+
+.card-reveal {
+  background-color: #00695c; }
+
 #professorGrimHeader {
   font-size: 55px;
   font-family: 'Courier New', Courier, monospace;
@@ -6,8 +47,8 @@
   padding-top: 10px;
   padding-bottom: 40px;
   overflow: hidden;
-  /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange;
+  /* content is not revealed until the animation */
+  border-right: .12em solid orange;
   /* The typwriter cursor */
   white-space: nowrap;
   /* Keeps the content on a single line */
@@ -15,7 +56,7 @@
   /* Gives that scrolling effect as the typing happens */
   letter-spacing: .15em;
   /* Adjust as needed */
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite; }
+  animation: typing 3.5s steps(30, end), blink-caret 0.75s step-end infinite; }
 
 @keyframes typing {
   from {
@@ -23,7 +64,7 @@
   to {
     width: 100%; } }
 
-/* The typewriter cursor effect */
+/* Typewriter cursor effect */
 @keyframes blink-caret {
   from,
   to {
@@ -31,44 +72,64 @@
   50% {
     border-color: orange; } }
 
+#circle {
+  width: 180px;
+  height: 180px;
+  margin-top: 30px;
+  background-color: #EBEBEB;
+  border-style: outset;
+  border-color: orange;
+  border-width: 15px;
+  border-radius: 50%;
+  margin-left: 60px;
+  margin-bottom: 30px;
+  background-size: cover;
+  -webkit-animation: rotation 2s infinite linear; }
+
 #oddishCircle {
   width: 180px;
   height: 180px;
+  margin-top: 30px;
   background-color: #EBEBEB;
   border-style: outset;
-  border-color: crimson;
+  border-color: orange;
   border-width: 15px;
   border-radius: 50%;
-  margin-left: 100px;
-  background-image: url("images/oddish.png");
+  margin-left: 60px;
+  margin-bottom: 30px;
   background-size: cover;
-  -webkit-animation: rotation 2s infinite linear; }
+  -webkit-animation: rotation 2s infinite linear;
+  background-image: url("images/oddish.png"); }
 
 #gloomCircle {
   width: 180px;
   height: 180px;
+  margin-top: 30px;
   background-color: #EBEBEB;
   border-style: outset;
   border-color: orange;
-  border-radius: 50%;
   border-width: 15px;
-  margin-left: 100px;
-  background-image: url("images/gloom.png");
+  border-radius: 50%;
+  margin-left: 60px;
+  margin-bottom: 30px;
   background-size: cover;
-  -webkit-animation: rotation 2s infinite linear; }
+  -webkit-animation: rotation 2s infinite linear;
+  background-image: url("images/gloom.png"); }
 
 #weezingCircle {
   width: 180px;
   height: 180px;
+  margin-top: 30px;
   background-color: #EBEBEB;
   border-style: outset;
-  border-color: yellow;
-  border-radius: 50%;
+  border-color: orange;
   border-width: 15px;
-  margin-left: 100px;
-  background-image: url("images/weezing.png");
+  border-radius: 50%;
+  margin-left: 60px;
+  margin-bottom: 30px;
   background-size: cover;
-  -webkit-animation: rotation 2s infinite linear; }
+  -webkit-animation: rotation 2s infinite linear;
+  background-image: url("images/weezing.png"); }
 
 @-webkit-keyframes rotation {
   from {
@@ -76,5 +137,11 @@
   to {
     -webkit-transform: rotate(359deg); } }
 
-body {
-  background-color: #528078; }
+#oddishBtn {
+  margin-left: 55px; }
+
+#gloomBtn {
+  margin-left: 60px; }
+
+#weezingBtn {
+  margin-left: 50px; }
